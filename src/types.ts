@@ -4,7 +4,7 @@ export interface IQuerystring {
 }
 
 export interface IHeaders {
-  "h-Custom": string;
+  "h-custom": string;
 }
 
 export interface IReply<T = undefined> {

@@ -1,67 +1,81 @@
 # Fastify Boilerplate
 
-A simple Fastify boilerplate using TypeScript.
+This is a boilerplate project for building a Fastify server with TypeScript. It includes basic setup for routing, validation, and testing.
 
 ## Features
 
-- Fastify for high-performance HTTP APIs
-- TypeScript support
-- Hot reload with `ts-node-dev`
-- Organized with `src/` for source files and `dist/` for compiled output
+- [Fastify](https://fastify.dev/) for building the server
+- [TypeScript](https://www.typescriptlang.org/) for type safety
+- [Jest](https://jestjs.io/) for testing
+- Pre-configured scripts for development and production
 
-## Installation
+## Getting Started
 
-```sh
-npm install
-```
+### Prerequisites
 
-## Usage
+- Node.js (>= 14.x)
+- npm or yarn
 
-### Development Mode (Hot Reload)
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/joacoleza/fastify-boilerplate.git
+   cd fastify-boilerplate
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   # or
+   yarn install
+   ```
+
+### Running the Server
+
+To start the server in development mode:
 
 ```sh
 npm run dev
+# or
+yarn dev
 ```
 
-### Build and Run
+To build and start the server in production mode:
 
 ```sh
-npm run build && npm run start
+npm run build
+npm start
+# or
+yarn build
+yarn start
 ```
 
-## API Endpoints
+### Running Tests
 
-### `GET /ping`
+To run the tests:
 
-Returns a simple response:
-
-```json
-{
-  "success": true,
-  "data": "pong"
-}
+```sh
+npm test
+# or
+yarn test
 ```
 
-### `GET /auth`
+## Project Structure
 
-Validates the `username` query parameter (must be `admin`) and requires the `h-custom` header.
-
-#### Request Example:
-
-```
-GET /auth?username=admin&password=secret
-Headers:
-  h-custom: some-value
-```
-
-#### Response:
-
-```json
-{
-  "success": true
-}
-```
+- `src/` - Source code
+  - [`app.ts`](src/app.ts) - Main application setup
+  - [`server.ts`](src/server.ts) - Server entry point
+  - [`types.ts`](src/types.ts) - Type definitions
+  - [`utils.ts`](src/utils.ts) - Utility functions
+  - [`utils.test.ts`](src/utils.test.ts) - Tests for utility functions
+  - [`app.integration.test.ts`](src/app.integration.test.ts) - Integration tests for the application
+- `coverage/` - Code coverage reports
+- `dist/` - Compiled output
+- [`jest.config.js`](jest.config.js) - Jest configuration
+- [`tsconfig.json`](tsconfig.json) - TypeScript configuration
 
 ## License
 
-ISC
+This project is licensed under the ISC License.
